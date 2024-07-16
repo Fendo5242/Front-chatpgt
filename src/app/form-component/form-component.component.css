@@ -1,0 +1,59 @@
+.title{
+  text-align: center; 
+  font-family: Comic Sans MS; 
+  font-weight:bold; 
+  font-size: 50px; 
+  color: #ffd500; 
+  text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68, 5px 5px #414D68;
+}
+
+.text{
+  text-align: center; 
+  font-family: Comic Sans MS; 
+  font-weight:bold; 
+  font-size: 20px; 
+  color: #ffd500; 
+  text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68, 5px 5px #414D68;
+}
+
+body {
+background-image: url('https://img.itch.zone/aW1hZ2UvMTExMDMwNy8xMDc5OTM5My5naWY=/original/SuVVd8.gif');
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+padding: 20px;
+}
+
+.form-container {
+background-color: rgba(255, 255, 255, 0.426);
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+max-width: 800px;
+margin: 0 auto;
+}
+
+.range-labels {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.range-labels span {
+  position: absolute;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.button-container .btn {
+  width: 150px;
+}
