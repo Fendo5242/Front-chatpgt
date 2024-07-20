@@ -1,0 +1,28 @@
+<nav class="navbar">
+    <div class="logo">
+      <h1>CHATGPT POST</h1>
+    </div>
+    <ul>
+        <li>
+          <a routerLink="/form">Form</a>
+        </li>
+        <li>
+          <a routerLink="/insert">Insert</a>
+        </li>
+      </ul>
+      <div class="hamburger" (click)="toggleMenu()">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </nav>
+    <div class="menubar" [class.active]="menuActive">
+      <ul>
+        <li>
+          <a routerLink="/form" (click)="toggleMenu()">Form</a>
+        </li>
+        <li>
+          <a routerLink="/insert" (click)="toggleMenu()">Insert</a>
+        </li>
+      </ul>
+    </div>

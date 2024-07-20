@@ -14,6 +14,7 @@ export class FormComponent implements OnInit {
   categories: any[] = [];
   questions: any[] = [];
   answers: { [key: number]: string } = {};
+  userId = 1; // ID del usuario (puede ser dinámico según la aplicación)
 
   constructor(private questionService: QuestionService) { }
 
@@ -57,7 +58,26 @@ export class FormComponent implements OnInit {
     this.answers[questionId] = inputElement.value;
   }
 
-  onSubmit(): void {
+  onSubmit(event: Event): void {
+    event.preventDefault(); // Evitar que el formulario se envíe de la manera tradicional
+    const userResponses = this.questions.map(question => ({
+      UserID: this.userId,
+      QuestionID: question.questionID,
+      ResponseEn: this.answers[question.questionID] || 'No answer',
+      ResponseEs: this.answers[question.questionID] || 'No answer'
+    }));
+
+    userResponses.forEach(response => {
+      this.questionService.saveUserResponse(response).subscribe(
+        res => {
+          console.log('Response saved successfully', res);
+        },
+        error => {
+          console.error('Error saving response', error);
+        }
+      );
+    });
+
     const result = this.questions.map(question => {
       const answer = this.answers[question.questionID] || 'No answer';
       return `${question.textEn}: ${answer}`;
